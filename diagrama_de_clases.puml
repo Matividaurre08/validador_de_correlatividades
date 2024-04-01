@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Inscripcion {
+    -List<Materia> materiasAInscribir;
+    +boolean aprobada(unAlumno);
+}
+
+class Materia {
+    -List<Materia> materiasCorrelativas;
+    +boolean cumpleCorrelativas(unAlumno);
+}
+
+class Alumno {
+    -List<Materia> materiasAprobadas;
+    +boolean tieneAprobada(unaMateria);
+
+}
+
+Inscripcion--> "*" Materia
+Alumno--> "*" Materia
+
+
+@enduml
